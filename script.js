@@ -51,3 +51,11 @@ var counter = 1;
     }
     counter ++;
   }
+
+ $("button").click(function() {
+    value = $(this).siblings("textarea").val();
+    hourString = $(this).siblings("div").text();
+    
+    saveSchedule(hourString, value);
+  });
+
