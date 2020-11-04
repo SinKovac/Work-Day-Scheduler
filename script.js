@@ -42,12 +42,12 @@ var counter = 1;
     let presentHour = moment().hour();
     let timeString = $(timeId).text();
     let timeNumber = hourNumberFromHourString(timeString);  
-    if(timeNumber < presentHour) {
-      $(textEntry).addClass("past-hour");
-    } else if (timeNumber > presentHour) {
-      $(textEntry).addClass("future-hour");
+    if(timeNumber < present) {
+      $(textEntry).addClass("past");
+    } else if (timeNumber > present) {
+      $(textEntry).addClass("future");
     } else {
-      $(textEntry).addClass("present-hour");
+      $(textEntry).addClass("present");
     }
     counter ++;
   }
