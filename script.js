@@ -64,17 +64,17 @@ function loadCorrectDataset() {
     return (result ? result : workDay);
   }
   
-  function initializeLocalStorage() {
-    localStorage.setItem('workDay', JSON.stringify(workDay));
+function initializeLocalStorage() {
+   localStorage.setItem('workDay', JSON.stringify(workDay));
   };
   
-  function saveToLocalStorage(dayObj) {
-    localStorage.setItem('workDay', JSON.stringify(dayObj));
+function saveToLocalStorage(dayObj) {
+   localStorage.setItem('workDay', JSON.stringify(dayObj));
   }
   
-  function saveSchedule(hourString, val) {
-    if(!localStorage.getItem('workDay')) {
-      initializeLocalStorage();
+function saveSchedule(hourString, val) {
+   if(!localStorage.getItem('workDay')) {
+     initializeLocalStorage();
     }
  
 function updateCalendarTasks(dayObject) {
@@ -82,4 +82,10 @@ function updateCalendarTasks(dayObject) {
       let res = $(this).children("div");
       $(this).children("textarea").text(dayObject[res.text()]);
     })
+  }
+
+ var workHours = JSON.parse(localStorage.getItem('workDay'));
+    workHours[hourString] = val
+  
+    saveToLocalStorage(workHours);
   }
