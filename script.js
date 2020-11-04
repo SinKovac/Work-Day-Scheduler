@@ -39,7 +39,7 @@ var counter = 1;
     let textEntry = "#text-entry" + counter;
     $(textEntry).text(workDay[property]);
     let timeId = "#time" + counter;
-    let presentHour = moment().hour();
+    let present = moment().hour();
     let timeString = $(timeId).text();
     let timeNumber = hourNumberFromHourString(timeString);  
     if(timeNumber < present) {
