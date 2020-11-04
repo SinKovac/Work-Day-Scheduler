@@ -23,3 +23,13 @@ function hourNumberFromHourString(hourString) {
       case "5 PM": return 16;
     }
   }
+
+ $(document).ready(function(){
+    if(!localStorage.getItem('workDay')) {
+      updateCalendarTasks(workDay);
+    } else {
+      updateCalendarTasks(JSON.parse(localStorage.getItem('workDay')));
+    }
+  })
+  
+  $('#date-today h6').text(moment().format('dddd') + ", " + moment().format('MMMM Do YYYY, h:mm:ss a'));
